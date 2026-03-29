@@ -1,1 +1,27 @@
+# Phân loại văn bản Tiếng Việt - VNExpress News 📰
 
+Dự án này thực hiện các bước Tiền xử lý dữ liệu và Trích xuất đặc trưng (Feature Extraction) cho bài toán Phân loại văn bản tiếng Việt, sử dụng tập dữ liệu tin tức từ VNExpress. Dự án được xây dựng và thực thi trên môi trường Google Colab.
+
+## Mô tả chung
+Mục tiêu của dự án là biến đổi các đoạn văn bản thô (bài báo) thành các vector đặc trưng toán học (TF-IDF) để chuẩn bị cho việc huấn luyện các mô hình Học máy (Machine Learning).
+
+Các bước chính đã thực hiện:
+1. **Đọc dữ liệu:** Quét và thống kê số lượng bài viết theo từng nhãn (chủ đề) từ Google Drive, tự động bỏ qua các file rác.
+2. **Tách từ (Word Segmentation):** Sử dụng thư viện `pyvi` để xử lý từ ghép tiếng Việt.
+3. **Loại bỏ từ dừng (Stopwords):** Tự động tải và áp dụng danh sách từ dừng tiếng Việt chuẩn từ GitHub để làm sạch dữ liệu.
+4. **Trích xuất đặc trưng:** Xây dựng `Pipeline` kết hợp `CountVectorizer` và `TfidfTransformer` để chuyển đổi văn bản thành ma trận số học.
+
+##  Tập dữ liệu (Dataset)
+* **Nguồn:** Các bài báo phân theo chủ đề trên VNExpress (`news_vnexpress`). Được lưu tại : https://drive.google.com/drive/folders/1fLNWtUjdCwWXiUOMfvslz1N2EBhF4HCB?usp=sharing
+* Cấu trúc thư mục dữ liệu bao gồm các thư mục con, mỗi thư mục con đại diện cho một nhãn (label) và chứa các file văn bản (text files).
+
+##  Thư viện sử dụng
+Để chạy được đoạn code trong dự án này, bạn cần cài đặt các thư viện sau:
+* `Python 3.x`
+* `scikit-learn`
+* `pyvi` (Python Vietnamese Toolkit)
+* `requests`
+
+Cài đặt thư viện `pyvi` trên Colab/Terminal:
+```bash
+pip install pyvi
