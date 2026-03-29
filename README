@@ -1,3 +1,6 @@
+Ex1: test KNN
+
+HW1:
 # Phân loại văn bản Tiếng Việt - VNExpress News 📰
 
 Dự án này thực hiện các bước Tiền xử lý dữ liệu và Trích xuất đặc trưng (Feature Extraction) cho bài toán Phân loại văn bản tiếng Việt, sử dụng tập dữ liệu tin tức từ VNExpress. Dự án được xây dựng và thực thi trên môi trường Google Colab.
